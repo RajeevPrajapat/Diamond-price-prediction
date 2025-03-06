@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            animation: backgroundFade 5s infinite alternate ease-in-out;
+        }
+
+        @keyframes backgroundFade {
+            0% { background: linear-gradient(135deg, #2c3e50, #4ca1af); }
+            100% { background: linear-gradient(135deg, #4ca1af, #2c3e50); }
+        }
+
+        .result-container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            padding: 30px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 10px 25px rgba(34, 34, 34, 0.3);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease-in-out;
+            animation: fadeInScale 1s ease-in-out;
+        }
+
+        .result-container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: 0 0 10px rgba(149, 181, 250, 0);
+            text-shadow: 0 0 10px rgba(61, 182, 252, 0.8);
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(214, 213, 213, 0.8); }
+            to { text-shadow: 0 0 20px rgb(253, 222, 222); }
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .diamond-image {
+            width: 100px;
+            height: auto;
+            margin-bottom: 15px;
+        
+            animation: bounce 1.5s infinite ease-in-out;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            .result-container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <img src="D:/python/diamonPricePre/templates/diamond.png" alt="Diamond Price" class="diamond-image">
+        <h1>{{ result_text }}</h1>
+    </div>
+</body>
+</html>
