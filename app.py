@@ -15,7 +15,7 @@ except Exception as e:
     Scaler = None
 
 # Define feature names (must match training data)
-feature_names = ['carat','cut','color','clarity','table','x','y','z']
+feature_names = ['carat','cut','color','clarity','table']
 
 # Route for Home Page
 @app.route('/')
